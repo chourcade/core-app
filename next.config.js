@@ -1,10 +1,10 @@
 const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
 
 const LOGIN_APP_URL =
-  process.env.NEXT_PUBLIC_SHOP_APP_URL || 'http://localhost:3001';
+  process.env.NEXT_PUBLIC_SHOP_APP_URL || 'http://localhost:3001/';
 
 const PLAYGROUND_APP_URL =
-  process.env.NEXT_PUBLIC_CONTENT_APP_URL || 'http://localhost:3002';
+  process.env.NEXT_PUBLIC_CONTENT_APP_URL || 'http://localhost:3002/';
 
 
 const remotes = (isServer) => {
@@ -26,7 +26,12 @@ const nextConfig = {
         remotes: remotes(isServer),
         exposes: {
           // Host app also can expose modules
-        }
+        },
+        extraOptions: {
+          exposePages: true, // `false` by default
+          enableImageLoaderFix: true, // `false` by default
+          enableUrlLoaderFix: true, // `false` by default
+        },
       })
     );
 
