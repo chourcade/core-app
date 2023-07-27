@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 
 const RemotePage = dynamic(() => import('login/LoginPage'));
 
-export default function LocalPage(props) {
+export default function LoginPage(props) {
   return <RemotePage {...props} />
 }
 

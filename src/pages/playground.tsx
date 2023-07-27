@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 
 const RemotePage = dynamic(() => import('playground/Playground'));
 
-export default function LocalPage(props) {
+export default function PlaygroundPage(props) {
   return <RemotePage {...props} />
 }
 
