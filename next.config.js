@@ -11,8 +11,8 @@ const remotes = (isServer) => {
   const location = isServer ? 'ssr' : 'chunks';
   return {
     // specify remotes
-    login: `login@${LOGIN_APP_URL}/_next/static/${location}/remoteEntry.js`,
-    playground: `playground@${PLAYGROUND_APP_URL}/_next/static/${location}/remoteEntry.js`,
+    login: `login@${LOGIN_APP_URL}_next/static/${location}/remoteEntry.js`,
+    playground: `playground@${PLAYGROUND_APP_URL}_next/static/${location}/remoteEntry.js`,
   };
 }
 /** @type {import('next').NextConfig} */
