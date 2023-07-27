@@ -1,10 +1,10 @@
 const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
 
 const LOGIN_APP_URL =
-  process.env.NEXT_PUBLIC_SHOP_APP_URL || 'http://localhost:3001/';
+  process.env.NEXT_PUBLIC_LOGIN_APP_URL || 'http://localhost:3001/';
 
 const PLAYGROUND_APP_URL =
-  process.env.NEXT_PUBLIC_CONTENT_APP_URL || 'http://localhost:3002/';
+  process.env.NEXT_PUBLIC_PLAYGROUND_APP_URL || 'http://localhost:3002/';
 
 
 const remotes = (isServer) => {
@@ -19,6 +19,7 @@ const remotes = (isServer) => {
 const nextConfig = {
   reactStrictMode: true,
   webpack(config, { isServer }) {
+    console.log(PLAYGROUND_APP_URL, LOGIN_APP_URL)
     config.plugins.push(
       new NextFederationPlugin({
         name: 'host',
