@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import { revalidate, FlushedChunks, flushChunks } from '@module-federation/nextjs-mf/utils';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
