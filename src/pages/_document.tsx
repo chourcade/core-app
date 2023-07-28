@@ -5,6 +5,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
+    if(!ctx.req) return {...await Document.getInitialProps(ctx), ...await flushChunks()}
     if (process.env.NODE_ENV === "development" && !ctx.req.url.includes("_next")) {
       await revalidate().then((shouldReload) => {
         if (shouldReload) {
