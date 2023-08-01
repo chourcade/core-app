@@ -10,7 +10,7 @@ export default function PlaygroundPage(props) {
 
 export const getServerSideProps = async (ctx) => {
   const remotePage = await import('playground/Playground');
-
+  console.log(ctx)
   if (remotePage.getServerSideProps) {
     return remotePage.getServerSideProps(ctx)
   }

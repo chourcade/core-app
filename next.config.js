@@ -19,7 +19,6 @@ const remotes = (isServer) => {
 const nextConfig = {
   reactStrictMode: true,
   webpack(config, { isServer }) {
-    console.log(PLAYGROUND_APP_URL, LOGIN_APP_URL)
     config.plugins.push(
       new NextFederationPlugin({
         name: 'host',
@@ -29,9 +28,10 @@ const nextConfig = {
           // Host app also can expose modules
         },
         extraOptions: {
-          exposePages: true, // `false` by default
+          exposePages: false, // `false` by default
           enableImageLoaderFix: true, // `false` by default
           enableUrlLoaderFix: true, // `false` by default
+          useFileSystemPublicRoutes: false, 
         },
       })
     );
