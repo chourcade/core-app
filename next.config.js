@@ -28,10 +28,9 @@ const nextConfig = {
           // Host app also can expose modules
         },
         extraOptions: {
-          exposePages: false, // `false` by default
+          exposePages: true, // `false` by default
           enableImageLoaderFix: true, // `false` by default
           enableUrlLoaderFix: true, // `false` by default
-          useFileSystemPublicRoutes: false, 
         },
       })
     );
